@@ -25,7 +25,7 @@
 
   .well
     .tab-content
-      .tab-pane.fade.in.active#tababout
+      .tab-pane.fade.in#tababout
         %span I'm Nandang Sopyan, simple and dynamic person. I was born in Sukabumi. I work at an IT company in Indonesia.
         %p
         %p I mostly interested with Computer Programming and Linux Server Administration.
@@ -38,15 +38,14 @@
       .tab-pane.fade.in#tabexperiences
         %h3 My Work Experinces 
 
-      .tab-pane.fade.in#tabblog
-        - @posts.each do | post |
-          %h1 
-            = link_to post.title, post_path(post)
-          %p 
-            = post.content
-          %span.badge Posted 08 February 2019
-          .pull-right
-            %span.label.label-default N
-            %span.label.label-primary Story
-            %span.label.label-success blog
-          %hr
+      .tab-pane.fade.in.active#tabblog
+        %h1 
+          = @post.title
+        %p 
+          = @post.content
+        %span.badge Posted 08 February 2019
+        .pull-right
+          %span.label.label-default N
+          %span.label.label-primary Story
+          %span.label.label-success blog
+        %hr
