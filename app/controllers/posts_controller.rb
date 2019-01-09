@@ -1,9 +1,9 @@
 class PostsController < ApplicationController
   def index
-    @posts      = Post.paginate(per_page: 2, page: params[:page]).ordered
+    @posts      = Post.paginated(params[:page]).ordered
   end
 
   def show
-    @post       = Post.friendly.find params[:id]
+    @post       = Post.friendly.find(params[:id])
   end
 end

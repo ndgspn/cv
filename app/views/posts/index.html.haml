@@ -1,15 +1,14 @@
-.well
-  - @posts.each do | post |
-    %h1 
-      = link_to post.title.titleize, post_path(post)
-    %p 
-      = post.content
-    %span.badge 
-      = post.created_at.strftime("%d %B %Y") 
-      by
-      = post.user.name.titleize
-    .pull-right
-      = raw(post.categories.map { |category| raw(link_to(category.name.capitalize, category_path(category))) }.join(' / '))    
-    %hr
-  %center
-    = will_paginate @posts, renderer: BootstrapPagination::Rails
+- @posts.each do | post |
+  %h1 
+    = link_to post.title.titleize, post_path(post)
+  %p 
+    = post.content
+  %span.badge 
+    = post.created_at.strftime("%d %B %Y") 
+    by
+    = post.user_name.titleize
+  .pull-right
+    = raw(post.categories.map { |category| raw(link_to(category.name.capitalize, category_path(category))) }.join(' / '))    
+  %hr
+%center
+  = will_paginate @posts, renderer: BootstrapPagination::Rails
