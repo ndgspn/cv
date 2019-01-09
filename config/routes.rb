@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   root to: 'profiles#index'
 
   resources :posts, only: [:index, :show]
+  resources :categories
+  resources :work_experiences
 end

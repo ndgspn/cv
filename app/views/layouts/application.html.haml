@@ -9,4 +9,14 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
   %body
-    = yield
+    .col-md-6.col-md-offset-3.col-sm-12
+      .card.hovercard
+        .card-background
+          = image_tag('1.jpg')
+        .useravatar
+          = link_to root_path do
+            = image_tag('1.jpg')
+        .card-info
+          %span.card-title N. Sopyan
+      = render 'layouts/menu'
+      = yield

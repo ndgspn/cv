@@ -1,52 +1,6 @@
-.col-md-6.col-md-offset-3.col-sm-12
-  .card.hovercard
-    .card-background
-      = image_tag('1.jpg')
-    .useravatar
-      = image_tag('1.jpg')
-    .card-info
-      %span.card-title N. Sopyan
-
-  .btn-pref.btn-group.btn-group-justified.btn-group-lg{role: 'group', aria: {label: '...'}}
-    .btn-group{role: 'group'}
-      %button{type: 'button', id: 'about', class: 'btn btn-primary', href: '#tababout', data: {toggle: 'tab'}}
-        %span.glyphicon.glyphicon-user{aria: {hidden: 'true'}}
-        .hidden-xs About 
-
-    .btn-group{role: 'group'}
-      %button{type: 'button', id: 'experiences', class: 'btn btn-default', href: '#tabexperiences', data: {toggle: 'tab'}}
-        %span.glyphicon.glyphicon-grain{aria: {hidden: 'true'}}
-        .hidden-xs Experiences
-
-    .btn-group{role: 'group'}
-      %button{type: 'button', id: 'following', class: 'btn btn-default', href: '#tabblog', data: {toggle: 'tab'}}
-        %span.glyphicon.glyphicon-pencil{aria: {hidden: 'true'}}
-        .hidden-xs Blog
-
-  .well
-    .tab-content
-      .tab-pane.fade.in.active#tababout
-        %span I'm Nandang Sopyan, simple and dynamic person. I was born in Sukabumi. I work at an IT company in Indonesia.
-        %p
-        %p I mostly interested with Computer Programming and Linux Server Administration.
-        %p
-        %p I love cycling for fill my spare time, occasionally in a long trip and twice a week bike to work but not regularly. 
-        = image_tag('3.jpg', width: '100%')
-        %center
-          %span.image-caption-bg I'm in the middle, my friend in the left, and my young brother in the right side
-
-      .tab-pane.fade.in#tabexperiences
-        %h3 My Work Experinces 
-
-      .tab-pane.fade.in#tabblog
-        - @posts.each do | post |
-          %h1 
-            = link_to post.title, post_path(post)
-          %p 
-            = post.content
-          %span.badge Posted 08 February 2019
-          .pull-right
-            %span.label.label-default N
-            %span.label.label-primary Story
-            %span.label.label-success blog
-          %hr
+.well
+  - @profiles.each do | profile |
+    = simple_format profile.about
+  = image_tag('3.jpg', width: '100%')
+  %center
+    %span.image-caption-bg I'm in the middle, my friend in the left, and my young brother in the right side

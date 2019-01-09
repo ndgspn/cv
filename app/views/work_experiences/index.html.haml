@@ -1,0 +1,11 @@
+.well
+  %ul.timeline
+    - @work_experiences.each do | work |
+      %li
+        .job-title 
+          = work.job_title
+        .pull-right.label.label-primary
+          = work.start_date
+          = "-"
+          = work.end_date
+        = work.company

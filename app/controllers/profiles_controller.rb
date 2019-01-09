@@ -1,5 +1,6 @@
 class ProfilesController < ApplicationController
   def index
-    @posts = Post.ordered
+    @profiles   = Profile.profile
   end
+
 end

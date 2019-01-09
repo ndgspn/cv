@@ -1,0 +1,19 @@
+.btn-pref.btn-group.btn-group-justified.btn-group-lg{role: 'group', aria: {label: '...'}}
+  .btn-group{role: 'group'}
+    = link_to root_path do
+      %button{type: 'button', id: 'about', class: 'btn btn-primary'}
+        %span.glyphicon.glyphicon-user{aria: {hidden: 'true'}}
+        .hidden-xs About 
+
+  .btn-group{role: 'group'}
+    = link_to work_experiences_path do
+      %button{type: 'button', id: 'experiences', class: 'btn btn-success'}
+        %span.glyphicon.glyphicon-grain{aria: {hidden: 'true'}}
+        .hidden-xs Work Experiences
+
+  .btn-group{role: 'group'}
+    = link_to posts_path do
+      %button{type: 'button', id: 'following', class: 'btn btn-danger'}
+        %span.glyphicon.glyphicon-pencil{aria: {hidden: 'true'}}
+        .hidden-xs Blog
+
