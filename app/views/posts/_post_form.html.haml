@@ -1,0 +1,17 @@
+= form_for @post do | post |
+  .form-group
+    = post.label :title
+    = post.text_field :title, class: 'form-control'
+
+  .form-group
+    = post.label :content
+    = post.text_area :content, class: 'form-control', rows: 16 
+
+  .form-group
+    Categories :
+    - @categories.each do | category |
+      = check_box_tag category.id, category.id, @post.categories.include?(category), name: 'post[category_ids][]'
+      = label_tag category.id, category.name 
+
+  .form-group
+    = post.submit 'save', class: 'btn btn-primary'

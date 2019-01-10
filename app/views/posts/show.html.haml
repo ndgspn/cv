@@ -1,14 +1,13 @@
-.tab-content
-  .tab-pane.fade.in.active#tabblog
-    %h1 
-      = @post.title.titleize
-    %p 
-      = simple_format @post.content
-    %span.badge 
-      Posted
-      = @post.created_at.strftime("%d %B %Y")
-      by
-      = @post.user.name.titleize
-    .pull-right
-      = raw(@post.categories.map { |category| raw(link_to(category.name.capitalize, category_path(category))) }.join(' / '))    
-    %hr
+%h1 
+  = @post.title.titleize
+%p 
+  = markdown(@post.content)
+
+%span.badge 
+  Posted
+  = @post.created_at.strftime("%d %B %Y")
+  by
+  = @post.user.name.titleize
+.pull-right
+  = raw(@post.categories.map { |category| raw(link_to(category.name.capitalize, category_path(category))) }.join(' / '))    
+%hr
