@@ -1,0 +1,39 @@
+%table.table
+  %thead
+    %tr
+      %th Personal Information
+      %th
+  %tbody
+    - @users.each do | user |
+      %tr
+        %td Name
+        %td
+          = user.name
+      %tr
+        %td Address
+        %td 
+          = user.address
+      %tr
+        %td Email
+        %td 
+          = user.email
+      %tr
+        %td Website
+        %td 
+          = user.website
+      %tr
+        %td Place of Birth
+        %td 
+          = user.place_of_birth
+      %tr
+        %td Date of Birth
+        %td 
+          = user.date_of_birth
+      %tr
+        %td Marital Status
+        %td 
+          = user.marital_status
+      %tr
+        %td Language
+        %td 
+          = user.language

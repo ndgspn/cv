@@ -1,4 +1,4 @@
-class WorkExperience < ApplicationRecord
+class FormalEducation < ApplicationRecord
   belongs_to :user
 
   def self.ordered

@@ -1,0 +1,17 @@
+%table.table
+  %thead
+    %tr
+      %th Formal Education
+      %th
+  %tbody
+%ul.timeline
+  - @formal_educations.each do | formal_education |
+    %li
+      .pull-right.label.label-primary
+        = formal_education.start_date
+        = "-"
+        = formal_education.end_date
+      .job-title 
+        = formal_education.university_name
+      .major
+        = formal_education.major

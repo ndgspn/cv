@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :posts, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   resources :categories
   resources :work_experiences
+  resources :curriculum_vitaes
 end
