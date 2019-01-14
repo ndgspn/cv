@@ -1,0 +1,7 @@
+= form_for @profile do | profile |
+  .form-group
+    = profile.label :about
+    = profile.text_area :about, rows: '8', class: 'form-control'
+
+  .form-group
+    = profile.submit 'submit', class: 'btn btn-primary'

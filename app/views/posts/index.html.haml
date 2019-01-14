@@ -3,7 +3,8 @@
     = link_to post.title.titleize, post_path(post)
   %p 
     .content
-    = markdown(post.content)
+      = raw truncate(strip_tags(rouge_markdown(post.content)), length: 350)
+
   %span.badge 
     = post.created_at.strftime("%d %B %Y") 
     by

@@ -1,0 +1,35 @@
+= form_for @user do | user |
+  .form-group
+    = user.label :name
+    = user.text_field :name, class: 'form-control'
+
+  .form-group
+    = user.label :address
+    = user.text_area :address, class: 'form-control'
+
+  .form-group
+    = user.label :email
+    = user.text_field :email, class: 'form-control'
+
+  .form-group
+    = user.label :website
+    = user.text_field :website, class: 'form-control'
+
+  .form-group
+    = user.label :place_of_birth
+    = user.text_field :place_of_birth, class: 'form-control'
+
+  .form-group
+    = user.label :date_of_birth
+    = user.text_field :date_of_birth, class: 'form-control'
+
+  .form-group
+    = user.label :marital_status
+    = user.text_field :marital_status, class: 'form-control'
+
+  .form-group
+    = user.label :language
+    = user.text_field :language, class: 'form-control'
+
+  .form-group
+    = user.submit 'update', class: 'btn btn-primary'

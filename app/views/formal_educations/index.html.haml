@@ -1,0 +1,19 @@
+%table.table
+  %thead
+    %tr
+      %th Formal Education
+      %th
+  %tbody
+%ul.timeline
+  - @formal_educations.each do | formal_education |
+    %li
+      .pull-right.label.label-primary
+        = formal_education.start_date
+        = "-"
+        = formal_education.end_date
+      .job-title 
+        = formal_education.university_name
+      .major
+        = formal_education.major
+      = link_to 'Edit', edit_formal_education_path(formal_education)
+      = link_to 'Delete', formal_education_path(formal_education), method: :delete, data: { confirm: 'Are you sure?' }

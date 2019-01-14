@@ -7,4 +7,7 @@ Rails.application.routes.draw do
   resources :categories
   resources :work_experiences
   resources :curriculum_vitaes
+  resources :users, only: [:index, :update, :edit]
+  resources :formal_educations
+  resources :profiles
 end

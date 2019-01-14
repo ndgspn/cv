@@ -1,3 +1,7 @@
+body {
+  padding-top: 70px;
+}
+
 /* USER PROFILE PAGE */
  .card {
     margin-top: 20px;
@@ -118,4 +122,10 @@ ul.timeline > li:before {
 
 .job-title {
   font-weight: bold;
+}
+
+/* Menus */
+.btn-sq-lg {
+  width: 150px !important;
+  height: 150px !important;
 }

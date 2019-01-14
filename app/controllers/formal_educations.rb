@@ -1,2 +1,0 @@
-class FormalEducationsController < ApplicationController
-end

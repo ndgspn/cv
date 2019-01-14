@@ -1,0 +1,23 @@
+= form_for @formal_education do | formal_education |
+  .form-group
+    = formal_education.label :university_name
+    = formal_education.text_field :university_name, class: 'form-control'
+
+  .form-group
+    = formal_education.label :major
+    = formal_education.text_field :major, class: 'form-control'
+
+  .form-group
+    = formal_education.label :degree
+    = formal_education.text_field :degree, class: 'form-control'
+
+  .form-group
+    = formal_education.label :start_date
+    = formal_education.text_field :start_date, class: 'form-control'
+
+  .form-group
+    = formal_education.label :end_date
+    = formal_education.text_field :end_date, class: 'form-control'
+
+  .form-group
+    = formal_education.submit 'submit', class: 'btn btn-primary'

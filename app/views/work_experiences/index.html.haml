@@ -1,0 +1,19 @@
+%table.table
+  %thead
+    %tr
+      %th Work Experiences
+      %th
+  %tbody
+%ul.timeline
+  - @work_experiences.each do | work |
+    %li
+      .pull-right.label.label-primary
+        = work.start_date
+        = "-"
+        = work.end_date
+      .job-title 
+        = work.job_title
+      = work.company
+      %p
+      = link_to 'edit', edit_work_experience_path(work)
+      = link_to 'delete', work_experience_path(work), method: :delete, data: { confirm: 'Are you sure?' }

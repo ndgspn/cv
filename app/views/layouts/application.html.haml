@@ -18,9 +18,10 @@
           = image_tag('1.jpg')
         .useravatar
           = link_to root_path do
-            = image_tag('1.jpg')
+            = image_tag('logo2.png')
         .card-info
           %span.card-title N. Sopyan
+      = render 'layouts/navbar'
       = render 'layouts/menu'
       .well
         = yield

@@ -1,0 +1,19 @@
+= form_for @work_experience do | work_experience |
+  .form-group
+    = work_experience.label :job_title
+    = work_experience.text_field :job_title, class: 'form-control'
+
+  .form-group
+    = work_experience.label :company
+    = work_experience.text_field :company, class: 'form-control'
+
+  .form-group
+    = work_experience.label :start_date
+    = work_experience.text_field :start_date, class: 'form-control'
+
+  .form-group
+    = work_experience.label :end_date
+    = work_experience.text_field :end_date, class: 'form-control'
+
+  .form-group
+    = work_experience.submit 'submit', class: 'btn btn-primary'

@@ -1,7 +1,7 @@
 %h1 
   = @post.title.titleize
 %p 
-  = markdown(@post.content)
+  = raw rouge_markdown(@post.content)
 
 %span.badge 
   Posted
