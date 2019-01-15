@@ -2,11 +2,11 @@ class PostsController < ApplicationController
   before_action :user_signed_in?, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    @posts      = Post.paginated(params[:page]).ordered
+    @posts = Post.paginated(params[:page]).ordered
   end
 
   def show
-    @post       = Post.friendly.find(params[:id])
+    @post = Post.friendly.find(params[:id])
   end
 
   def new
@@ -37,7 +37,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post      = Post.friendly.find(params[:id])
+    @post = Post.friendly.find(params[:id])
     return redirect_to posts_path if @post.destroy
     render status: 500, json: { message: @post.errors}
   end

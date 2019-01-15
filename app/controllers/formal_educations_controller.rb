@@ -6,7 +6,7 @@ class FormalEducationsController < ApplicationController
   end
 
   def new
-    @formal_education      = FormalEducation.new
+    @formal_education = FormalEducation.new
   end
 
   def create

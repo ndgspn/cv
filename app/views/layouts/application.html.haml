@@ -23,7 +23,8 @@
           = link_to root_path do
             = image_tag('logo2.png')
         .card-info
-          %span.card-title N. Sopyan
+          %span.card-title
+            = site_name
       - if current_user
         = render 'layouts/navbar'
       = render 'layouts/menu'
