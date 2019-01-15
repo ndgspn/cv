@@ -41,3 +41,24 @@
       %tr
         %td
           = link_to 'Edit', edit_user_path(user)
+
+/Login information
+%table.table
+  %thead
+    %tr
+      %th Login Information
+      %th
+  %tbody
+    - @users.each do | user |
+      %tr
+        %td User name
+        %td
+          = user.username
+      %tr
+        %td Password
+        %td
+          Password encrypted
+
+      %tr
+        %td
+          = link_to 'Edit', edit_account_path(user)

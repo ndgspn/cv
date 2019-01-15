@@ -11,3 +11,8 @@
 .pull-right
   = raw(@post.categories.map { |category| raw(link_to(category.name.capitalize, category_path(category))) }.join(' / '))    
 %hr
+
+= render 'discus'
+
+- @post_title       = @post.title
+- @post_description = truncate(@post.content, length: 100)

@@ -8,11 +8,15 @@
         %span.icon-bar
         %span.icon-bar
       = link_to root_path do
-        .navbar-brand N. Sopyan
+        .navbar-brand
+          = site_name
 
     .navbar-collapse.collapse#navbar
       %ul.nav.navbar-nav
-        %li.dropdown
+        %li
+          = link_to 'Site Identity', site_identities_path
+
+        %li
           = link_to 'Personal Information', users_path
 
         %li
@@ -44,3 +48,10 @@
               = link_to 'New', new_post_path
             %li
               = link_to 'Lists', posts_path
+            %li
+              = link_to 'Lists Categories', categories_path
+            %li
+              = link_to 'New Category', new_category_path
+
+        %li
+          = link_to 'Logout', session_path(current_user), method: :delete

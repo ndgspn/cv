@@ -1,6 +1,8 @@
 class ProfilesController < ApplicationController
+  before_action :user_signed_in?, except: [:index]
+
   def index
-    @profiles   = Profile.profile
+    @profiles = Profile.profile
   end
 
   def new
@@ -8,7 +10,8 @@ class ProfilesController < ApplicationController
   end
 
   def create
-    @profile = Profile.new(profile_params)
+    @profile      = Profile.new(profile_params)
+    @profile.user = current_user
     return redirect_to profiles_path if @profile.save
     render status: 402, json: { message: @profile.errors }
   end

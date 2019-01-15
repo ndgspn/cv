@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :user_signed_in?
+
   def index
     @users = User.all
   end
@@ -15,6 +17,6 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:name, :address, :email, :website, :place_of_birth, :date_of_birth, :marital_status, :language)
+    params.require(:user).permit(:name, :username, :address, :email, :website, :place_of_birth, :date_of_birth, :marital_status, :language)
   end
 end

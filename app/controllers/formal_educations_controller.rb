@@ -1,4 +1,6 @@
 class FormalEducationsController < ApplicationController
+  before_action :user_signed_in?
+
   def index
     @formal_educations = FormalEducation.all
   end
@@ -9,7 +11,7 @@ class FormalEducationsController < ApplicationController
 
   def create
     @formal_education      = FormalEducation.new(formal_education_params)
-    @formal_education.user = User.first
+    @formal_education.user = current_user
 
     return redirect_to formal_educations_path if @formal_education.save
     render status: 402, json: { message: @formal_education.errors }

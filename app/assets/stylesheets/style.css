@@ -1,5 +1,5 @@
 body {
-  padding-top: 70px;
+  padding-top: 40px;
 }
 
 /* USER PROFILE PAGE */
@@ -129,3 +129,4 @@ ul.timeline > li:before {
   width: 150px !important;
   height: 150px !important;
 }
+

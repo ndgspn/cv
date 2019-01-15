@@ -1,0 +1,15 @@
+= form_for @site_identity do | site_identity |
+  .form-group
+    = site_identity.label :site_name
+    = site_identity.text_field :site_name, class: 'form-control'
+
+  .form-group
+    = site_identity.label :site_description
+    = site_identity.text_area :site_description, class: 'form-control'
+
+  .form-group
+    = site_identity.label :site_meta
+    = site_identity.text_field :site_meta, class: 'form-control'
+
+  .form-group
+    = site_identity.submit 'submit', class: 'btn btn-primary'

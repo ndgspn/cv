@@ -1,0 +1,28 @@
+- if @site_identities.empty?
+  = link_to 'New', new_site_identity_path, class: 'btn btn-primary'
+- else
+  %table.table
+    %thead
+      %tr
+        %th Site Identity
+        %th
+    %tbody
+      - @site_identities.each do | site_identity |
+        %tr
+          %td Site name
+          %td
+            = site_identity.site_name
+        %tr
+          %td Site description
+          %td
+            = site_identity.site_description
+
+        %tr
+          %td Site meta 
+          %td
+            = site_identity.site_meta
+
+        %tr
+          %td
+            = link_to 'Edit', edit_site_identity_path(site_identity)
+            = link_to 'Delete', site_identity_path(site_identity), method: :delete, data: { confirm: 'Are you sure?' }

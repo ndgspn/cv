@@ -1,4 +1,6 @@
 class WorkExperiencesController < ApplicationController
+  before_action :user_signed_in?
+
   def index
     @work_experiences  = WorkExperience.ordered
   end

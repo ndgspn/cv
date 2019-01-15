@@ -14,5 +14,11 @@
   .btn-group{role: 'group'}
     = link_to posts_path do
       %button{type: 'button', id: 'following', class: 'btn btn-danger'}
-        %span.glyphicon.glyphicon-pencil{aria: {hidden: 'true'}}
-        .hidden-xs Blog
+        %span.glyphicon.glyphicon-console{aria: {hidden: 'true'}}
+        .hidden-xs Post
+
+  .btn-group{role: 'group'}
+    = link_to categories_path do
+      %button{type: 'button', id: 'following', class: 'btn btn-default'}
+        %span.glyphicon.glyphicon-sort-by-alphabet{aria: {hidden: 'true'}}
+        .hidden-xs Categories

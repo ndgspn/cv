@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :user_signed_in?, only: [:new, :create, :edit, :update, :destroy]
+
   def index
     @posts      = Post.paginated(params[:page]).ordered
   end
@@ -14,7 +16,7 @@ class PostsController < ApplicationController
 
   def create
     @post       = Post.new(post_params)
-    @post.user  = User.first
+    @post.user  = current_user
     @categories = Category.all
 
     return redirect_to posts_path if @post.save

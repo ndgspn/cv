@@ -1,8 +1,11 @@
 !!!
 %html{lang: 'en'}
   %head
-    %title CV Plus
+    %title
+      = @post_title || site_name
     %meta{charset: 'utf-8'}
+    %meta{property: 'og:title', content: "#{@post_title || site_name}"}
+    %meta{property: 'og:description', content: "#{@post_description || site_description}"}
     %meta{http: {equiv: 'X-UA-Compatible'}, content: 'IE=edge'}
     %meta{name: 'viewport', content: 'width=device-width, initial-scale=1'}
     = csrf_meta_tags
@@ -21,7 +24,9 @@
             = image_tag('logo2.png')
         .card-info
           %span.card-title N. Sopyan
-      = render 'layouts/navbar'
+      - if current_user
+        = render 'layouts/navbar'
       = render 'layouts/menu'
       .well
         = yield
+      = render 'layouts/footer'

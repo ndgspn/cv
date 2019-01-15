@@ -1,0 +1,7 @@
+- @posts_by_category.each do | post_by_category |
+  %h1 
+    = link_to post_by_category.title.titleize, post_path(post_by_category)
+  %span.badge 
+    = post_by_category.created_at.strftime("%d %B %Y") 
+    by
+    = post_by_category.user_name.titleize

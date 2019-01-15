@@ -1,5 +1,9 @@
-- @profiles.each do | profile |
-  = raw rouge_markdown(profile.about)
+- if current_user && @profiles.empty?
+  = link_to 'New', new_profile_path, class: 'btn btn-primary'
+- else
+  - @profiles.each do | profile |
+    = raw rouge_markdown(profile.about)
 
-  = link_to 'edit', edit_profile_path(profile)
-  = link_to 'delete', profile_path(profile), method: :delete, data: { confirm: 'Are you sure?' }
+    - if current_user
+      = link_to 'edit', edit_profile_path(profile)
+      = link_to 'delete', profile_path(profile), method: :delete, data: { confirm: 'Are you sure?' }
