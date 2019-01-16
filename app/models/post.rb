@@ -8,7 +8,7 @@ class Post < ApplicationRecord
   has_many :categorizations, dependent: :destroy
   has_many :categories, through: :categorizations
 
-  validates :title, presence: true
+  validates :title,   presence: true
   validates :content, presence: true
 
   def self.ordered
