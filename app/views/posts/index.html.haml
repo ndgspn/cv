@@ -1,20 +1,23 @@
-- @posts.each do | post |
-  %h1 
-    = link_to post.title.titleize, post_path(post)
-  %p 
-    .content
-      = raw truncate(strip_tags(rouge_markdown(post.content)), length: 350)
+- if @posts.empty?
+  Uuhhh... No post found :(
+- else
+  - @posts.each do | post |
+    %h1 
+      = link_to post.title.titleize, post_path(post)
+    %p 
+      .content
+        = raw truncate(strip_tags(rouge_markdown(post.content)), length: 350)
 
-  %span.badge 
-    = post.created_at.strftime("%d %B %Y") 
-    by
-    = post.user_name.titleize
-  .pull-right
-    = raw(post.categories.map { |category| raw(link_to(category.name.capitalize, category_path(category))) }.join(' / '))    
+    %span.badge 
+      = post.created_at.strftime("%d %B %Y") 
+      by
+      = post.user_name.titleize
+    .pull-right
+      = raw(post.categories.map { |category| raw(link_to(category.name.capitalize, category_path(category))) }.join(' / '))    
 
-  - if current_user
-    = link_to 'Edit', edit_post_path(post)
-    = link_to 'Delete', post_path(post), data: {confirm: 'Are you sure delete this post?'}, method: :delete
-  %hr
-%center
-  = will_paginate @posts, renderer: BootstrapPagination::Rails
+    - if current_user
+      = link_to 'Edit', edit_post_path(post)
+      = link_to 'Delete', post_path(post), data: {confirm: 'Are you sure delete this post?'}, method: :delete
+    %hr
+  %center
+    = will_paginate @posts, renderer: BootstrapPagination::Rails
