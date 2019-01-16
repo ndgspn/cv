@@ -1,7 +1,10 @@
-- @categories.each do | category |
-  %li
-    = link_to category.name.titleize, category_path(category)
-    - if current_user
-      |
-      = link_to 'edit', edit_category_path(category)
-      = link_to 'delete', category_path(category), method: :delete, data: { confirm: 'Are you sure?' }
+- if @categories.empty?
+  Uhhh... no category found right now :(
+- else
+  - @categories.each do | category |
+    %li
+      = link_to category.name.titleize, category_path(category)
+      - if current_user
+        |
+        = link_to 'edit', edit_category_path(category)
+        = link_to 'delete', category_path(category), method: :delete, data: { confirm: 'Are you sure?' }
