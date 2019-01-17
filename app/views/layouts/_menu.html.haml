@@ -1,6 +1,18 @@
 .btn-pref.btn-group.btn-group-justified.btn-group-lg{role: 'group', aria: {label: '...'}}
   .btn-group{role: 'group'}
     = link_to root_path do
+      %button{type: 'button', id: 'posts', class: 'btn btn-primary'}
+        %span.glyphicon.glyphicon-console{aria: {hidden: 'true'}}
+        .hidden-xs Posts
+
+  .btn-group{role: 'group'}
+    = link_to categories_path do
+      %button{type: 'button', id: 'categories', class: 'btn btn-primary'}
+        %span.glyphicon.glyphicon-sort-by-alphabet{aria: {hidden: 'true'}}
+        .hidden-xs Categories
+
+  .btn-group{role: 'group'}
+    = link_to profiles_path do
       %button{type: 'button', id: 'about', class: 'btn btn-primary'}
         %span.glyphicon.glyphicon-user{aria: {hidden: 'true'}}
         .hidden-xs About 
@@ -11,14 +23,3 @@
         %span.glyphicon.glyphicon-grain{aria: {hidden: 'true'}}
         .hidden-xs Curriculum Vitae
 
-  .btn-group{role: 'group'}
-    = link_to posts_path do
-      %button{type: 'button', id: 'following', class: 'btn btn-primary'}
-        %span.glyphicon.glyphicon-console{aria: {hidden: 'true'}}
-        .hidden-xs Posts
-
-  .btn-group{role: 'group'}
-    = link_to categories_path do
-      %button{type: 'button', id: 'following', class: 'btn btn-primary'}
-        %span.glyphicon.glyphicon-sort-by-alphabet{aria: {hidden: 'true'}}
-        .hidden-xs Categories
