@@ -1,0 +1,10 @@
+- if @posts_archive.empty?
+  Uhhh... no archive found right now :(
+- else
+  - @posts_archive.sort.reverse.each do | month, posts |
+    %h3
+      = month.strftime('%B %Y')
+    %ul
+      - posts.sort.each do | post |
+        %li
+          = link_to post.title.titleize, post_path(post), target: '_blank'

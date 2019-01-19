@@ -5,7 +5,10 @@ Rails.application.routes.draw do
   get 'login',  to: 'sessions#new'
   get 'logout', to: 'sessions#destroy'
 
-  resources :posts,             only: [:index, :show, :new, :create, :edit, :update, :destroy]
+  resources :posts,             only: [:index, :show, :new, :create, :edit, :update, :destroy] do
+    get 'archives', to: 'archives#index', on: :collection
+  end
+
   resources :categories,        only: [:index, :show, :new, :create, :edit, :update, :destroy]
   resources :work_experiences,  only: [:index, :new, :create, :edit, :update, :destroy]
   resources :curriculum_vitaes, only: [:index]

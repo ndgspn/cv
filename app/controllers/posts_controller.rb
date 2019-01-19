@@ -2,7 +2,12 @@ class PostsController < ApplicationController
   before_action :user_signed_in?, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    @posts = Post.paginated(params[:page]).ordered
+    if params[:search] 
+      @posts = Post.search_post(params[:search])
+    else
+      @posts = Post.ordered
+    end
+    @posts = @posts.paginated(params[:page])
   end
 
   def show

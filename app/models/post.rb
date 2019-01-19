@@ -23,4 +23,12 @@ class Post < ApplicationRecord
     user.name
   end
 
+  def self.search_post(params)
+    where('title like ?', "%#{params}%")
+  end
+
+  def self.monthly_archive
+    order(created_at: :desc).group_by { |p| p.created_at.beginning_of_month }
+  end
+
 end
