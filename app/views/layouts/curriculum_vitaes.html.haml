@@ -1,11 +1,8 @@
 !!!
 %html{lang: 'en'}
   %head
-    %title
-      = @post_title || site_name
+    %title Curriculum Vitae
     %meta{charset: 'utf-8'}
-    %meta{property: 'og:title', content: "#{@post_title || site_name}"}
-    %meta{property: 'og:description', content: "#{@post_description || site_description}"}
     %meta{http: {equiv: 'X-UA-Compatible'}, content: 'IE=edge'}
     %meta{name: 'viewport', content: 'width=device-width, initial-scale=1'}
     = csrf_meta_tags
