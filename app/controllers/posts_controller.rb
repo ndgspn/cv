@@ -2,8 +2,8 @@ class PostsController < ApplicationController
   before_action :user_signed_in?, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    if params[:search] 
-      @posts = Post.search_post(params[:search])
+    if params[:search]
+      @posts = Post.search_post(params)
     else
       @posts = Post.ordered
     end

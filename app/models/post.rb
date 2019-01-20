@@ -24,7 +24,8 @@ class Post < ApplicationRecord
   end
 
   def self.search_post(params)
-    where('title like ?', "%#{params}%")
+    post_keyword = params[:search]
+    where('title like ?', "%#{post_keyword}%")
   end
 
   def self.monthly_archive

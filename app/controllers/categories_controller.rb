@@ -6,8 +6,8 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category          = Category.category_id(params[:id])
-    @posts_by_category = @category.all_posts
+    @category          = Category.category(params)
+    @posts_by_category = @category.posts
   end
 
   def new
@@ -21,17 +21,17 @@ class CategoriesController < ApplicationController
   end
 
   def edit
-    @category = Category.category_id(params[:id])
+    @category = Category.category(params)
   end
 
   def update
-    @category = Category.category_id(params[:id])
+    @category = Category.category(params)
     return redirect_to categories_path if @category.update(category_params)
     render status: 402, json: { message: @category.errors }
   end
 
   def destroy
-    @category = Category.category_id(params[:id])
+    @category = Category.category(params)
     return redirect_to categories_path if @category.destroy
     render status: 500, json: { message: @category.errors }
   end

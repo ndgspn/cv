@@ -10,4 +10,9 @@ class FormalEducation < ApplicationRecord
   def self.ordered
     order(id: :asc)
   end
+
+  def self.formal_education(params)
+    formal_education = params[:id]
+    find(formal_education)
+  end
 end
