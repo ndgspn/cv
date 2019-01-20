@@ -2,7 +2,7 @@ class ProfilesController < ApplicationController
   before_action :user_signed_in?, except: [:index]
 
   def index
-    @profiles = Profile.profile
+    @profiles = Profile.all
   end
 
   def new
@@ -17,17 +17,17 @@ class ProfilesController < ApplicationController
   end
 
   def edit
-    @profile = Profile.find(params[:id])
+    @profile = Profile.profile(params)
   end
 
   def update
-    @profile = Profile.find(params[:id])
+    @profile = Profile.profile(params)
     return redirect_to  profiles_path if @profile.update(profile_params)
     render status: 402, json: { message: @profile.errors }
   end
 
   def destroy
-    @profile = Profile.find(params[:id])
+    @profile = Profile.profile(params)
     return redirect_to  profiles_path if @profile.destroy
     render status: 500, json: { message: @profile.errors }
   end

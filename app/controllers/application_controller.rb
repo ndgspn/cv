@@ -34,4 +34,5 @@ class ApplicationController < ActionController::Base
       SiteIdentity.first.site_description
     end
   end
+
 end

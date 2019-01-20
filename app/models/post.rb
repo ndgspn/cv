@@ -15,7 +15,8 @@ class Post < ApplicationRecord
     order(id: :desc)
   end
 
-  def self.paginated(page)
+  def self.paginated(params)
+    page = params[:page]
     paginate(per_page: 3, page: page)
   end
 
@@ -30,6 +31,11 @@ class Post < ApplicationRecord
 
   def self.monthly_archive
     order(created_at: :desc).group_by { |p| p.created_at.beginning_of_month }
+  end
+
+  def self.post(params)
+    post = params[:id]
+    friendly.find(post)
   end
 
 end

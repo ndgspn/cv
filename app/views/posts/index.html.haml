@@ -2,18 +2,18 @@
   Uuhhh... No post found :(
 - else
   - @posts.each do | post |
-    %h1 
+    %h1
       = link_to post.title.titleize, post_path(post)
-    %p 
+    %p
       .content
         = raw truncate(strip_tags(rouge_markdown(post.content)), length: 350)
 
-    %span.badge 
-      = post.created_at.strftime("%d %B %Y") 
+    %span.badge
+      = post.created_at.strftime("%d %B %Y")
       by
       = post.user_name.titleize
     .pull-right
-      = raw(post.categories.map { |category| raw(link_to(category.name.capitalize, category_path(category))) }.join(' / '))    
+      = raw its_category(post)
 
     - if current_user
       = link_to 'Edit', edit_post_path(post)

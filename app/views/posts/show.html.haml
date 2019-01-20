@@ -1,15 +1,15 @@
-%h1 
+%h1
   = @post.title.titleize
-%p 
+%p
   = raw rouge_markdown(@post.content)
 
-%span.badge 
+%span.badge
   Posted
   = @post.created_at.strftime("%d %B %Y")
   by
-  = @post.user.name.titleize
+  = @post.user_name.titleize
 .pull-right
-  = raw(@post.categories.map { |category| raw(link_to(category.name.capitalize, category_path(category))) }.join(' / '))    
+  = raw its_category(@post)
 %hr
 
 = render 'discus'
