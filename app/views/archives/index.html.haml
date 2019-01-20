@@ -1,7 +1,7 @@
-- if @posts_archive.empty?
+- if @monthly_posts_archive.empty?
   Uhhh... no archive found right now :(
 - else
-  - @posts_archive.sort.reverse.each do | month, posts |
+  - @monthly_posts_archive.sort.reverse.each do | month, posts |
     %h3
       = month.strftime('%B %Y')
     %ul

@@ -1,13 +1,13 @@
 class AccountsController < ApplicationController
   before_action :user_signed_in?
 
-  def edit 
+  def edit
     @user = User.find(params[:id])
   end
 
   def update
     @user = User.find(params[:id])
-    return redirect_to users_path if @user.update(user_params)
+    return redirect_to users_path if @user
     render status: 402, json: { message: @user.errors }
   end
 
