@@ -12,8 +12,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    return redirect_to root_path if ::Sessions::Destroy.call(session)
-    render status: 500, json: { message: 'Oops... something went wrong :(' }
+    ::Sessions::Destroy.call(session)
+    redirect_to root_path
   end
 
 end
