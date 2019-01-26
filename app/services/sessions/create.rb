@@ -1,6 +1,6 @@
 module Sessions
   module Create
-    def self.call(params)
+    def self.call(params, session=[])
       username = params[:username]
       password = params[:password]
 
