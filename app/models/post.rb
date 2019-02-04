@@ -21,7 +21,7 @@ class Post < ApplicationRecord
   end
 
   def user_name
-    user.name
+    user.nickname
   end
 
   def self.search_post(params)
