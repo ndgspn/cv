@@ -1,5 +1,5 @@
 module Sessions
-  class Create
+  class AuthenticateUser
     def initialize(params, session=[])
       @username = params[:username]
       @password = params[:password]
