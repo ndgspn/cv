@@ -6,13 +6,13 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = ::Sessions::AuthenticateUser.new(params, session).call
+    user = ::Session::AuthenticateUser.new(params, session).call
     return redirect_to root_path if user
     render status: 500, json: { message: 'Oops... login failed. Wrong username or password' }
   end
 
   def destroy
-    ::Sessions::DestroySession.new(session).call
+    ::Session::Destroy.new(session).call
     redirect_to root_path
   end
 
