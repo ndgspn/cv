@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_secure_password
   validates :username, presence: true
 
-  def self.user(params)
+  def self.current_user(params)
     user = params[:id]
     find(user)
   end

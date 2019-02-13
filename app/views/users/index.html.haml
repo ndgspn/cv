@@ -43,9 +43,6 @@
         %td
           = user.language
 
-      %tr
-        %td
-          = link_to 'Edit', edit_user_path(user)
 
 /Login information
 %table.table
@@ -63,7 +60,6 @@
         %td Password
         %td
           Password encrypted
-
       %tr
         %td
-          = link_to 'Edit', edit_account_path(user)
+          = link_to 'Edit', edit_user_path(user)

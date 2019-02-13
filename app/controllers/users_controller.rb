@@ -6,17 +6,17 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+    @user = User.current_user(params)
   end
 
   def update
-    @user = User.find(params[:id])
+    @user = User.current_user(params)
     return redirect_to users_path if @user.update(user_params)
-    render status: 500, json: { message: @user.errors }
+    render json: { status: 422, response: @user.errors }, status: :unprocessable_entity
   end
 
   private
   def user_params
-    params.require(:user).permit(:name, :username, :nickname, :address, :email, :website, :place_of_birth, :date_of_birth, :marital_status, :language)
+    params.require(:user).permit(:name, :username, :password, :password_confirmation, :nickname, :address, :email, :website, :place_of_birth, :date_of_birth, :marital_status, :language)
   end
 end

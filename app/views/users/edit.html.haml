@@ -36,4 +36,18 @@
     = user.text_field :language, class: 'form-control'
 
   .form-group
+    = user.label :username
+    = user.text_field :username, class: 'form-control'
+
+  .form-group
+    = user.label :password
+    (Leave it blank if you dont't change the password)
+    = user.password_field :password, class: 'form-control'
+
+  .form-group
+    = user.label :password_confirmation
+    (Leave it blank if you dont't change the password)
+    = user.password_field :password_confirmation, class: 'form-control'
+
+  .form-group
     = user.submit 'update', class: 'btn btn-primary'
