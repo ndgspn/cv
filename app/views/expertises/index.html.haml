@@ -1,0 +1,16 @@
+%table.table
+  %thead
+    %tr
+      %th Expertises
+      %th
+  %tbody
+%ul.timeline
+  - @expertises.each do | expertise |
+    %li
+      .pull-right.label.label-primary
+        = expertise.level
+      .job-title
+        = expertise.name
+      %p
+      = link_to 'edit', edit_expertise_path(expertise)
+      = link_to 'delete', expertise_path(expertise), method: :delete, data: { confirm: 'Are you sure?' }

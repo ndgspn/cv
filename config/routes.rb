@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   resources :profiles,          only: [:index, :new, :create, :edit, :update, :destroy]
   resources :sessions,          only: [:new, :create, :destroy]
   resources :site_identities
+  resources :expertises,        only: [:index, :new, :create, :edit, :update, :destroy]
 end

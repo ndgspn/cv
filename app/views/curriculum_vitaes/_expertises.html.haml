@@ -1,0 +1,13 @@
+%table.table
+  %thead
+    %tr
+      %th Expertises
+      %th
+  %tbody
+%ul.timeline
+  - @expertises.each do | expertise |
+    %li
+      .pull-right.label.label-primary
+        = expertise.level
+      .job-title
+        = expertise.name
